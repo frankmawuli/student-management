@@ -1,19 +1,12 @@
 import {Router} from "express";
+import { signInUser } from "../controllers/auth-controller.js";
 
 
 const router = Router();
 
 //Login user
-router.post("/login", (req, res) => {
-    // Implement login logic here
-    res.status(200).json({ message: "Login successful" });
-});
+router.post("/login",signInUser );
 
 
-//Log a user out
-router.post("/logout", (req, res) => {
-    // Implement logout logic here
-    res.status(200).json({ message: "Logout successful" });
-});
 
-
+export default router;

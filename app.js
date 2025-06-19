@@ -6,6 +6,7 @@ import { sql } from "./config/db.js";
 import UserRoutes from "./routes/users.js"
 import initDB from "./utils/create-tables.js";
 import CourseRoutes from "./routes/courses.js"
+import Auth from "./routes/auth.js";
 dotenv.config();
 const app = express();
 
@@ -25,6 +26,7 @@ app.get("/", (req, res) => {
 app.use("/api/users", UserRoutes);
 
 app.use("/api/courses", CourseRoutes);
+app.use("/api/auth", Auth);
 
 
 
